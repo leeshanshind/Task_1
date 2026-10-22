@@ -19,14 +19,14 @@ class IngredientTypeTest {
                 IngredientType.values());
     }
 
-    @ParameterizedTest(name = "{0}")
+    @ParameterizedTest(name = "name = {0}")
     @ValueSource(strings = {"SAUCE", "FILLING"})
     @DisplayName("Тип находится по названию")
     void valueOfReturnsTypeByName(String name) {
         assertEquals(name, IngredientType.valueOf(name).name());
     }
 
-    @ParameterizedTest(name = "{0}")
+    @ParameterizedTest(name = "name = \"{0}\"")
     @ValueSource(strings = {"BUN", "sauce", ""})
     @DisplayName("Неизвестный тип не находится по названию")
     void valueOfThrowsForUnknownName(String name) {
